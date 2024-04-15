@@ -37,8 +37,6 @@ const Home = () => {
       created_at: '2024-01-07T20:48:13.000Z',
     },
   ];
-
-
   return (
     <>
       <h2>My Media</h2>
