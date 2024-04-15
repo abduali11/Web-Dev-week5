@@ -1,7 +1,13 @@
+import { useState } from "react";
 import MediaRow from "./MediaRow";
+import SingleView from "./SingleView";
 
 const Home = () => {
+
+
+
   const mediaArray = [
+
     {
       media_id: 8,
       user_id: 5,
@@ -36,8 +42,10 @@ const Home = () => {
       description: 'Butterflies fly around the bunny.',
       created_at: '2024-01-07T20:48:13.000Z',
     },
-  ];
 
+  ];
+  const[SelectedItem, setSelectedItem] = useState(null);
+  console.log(SelectedItem);
 
   return (
     <>
@@ -51,18 +59,28 @@ const Home = () => {
             <th>Created</th>
             <th>Size</th>
             <th>Type</th>
+            <th>Actions</th>
           </tr>
         </thread>
         <tbody>
 
         {mediaArray.map((item) => (
-      <MediaRow key={item.media_id} item={item} />
+      <MediaRow key={item.media_id} item={item} setSelectedItem = {setSelectedItem} />
        ))}
 
         </tbody>
 
       </table>
+
+      <SingleView selectedItem={SelectedItem}
+      setSelectedItem={setSelectedItem} />
+
     </>
   );
 };
+
+
+
+
+
 export default Home;
