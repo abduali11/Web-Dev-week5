@@ -1,15 +1,19 @@
 import PropTypes from 'prop-types'
+import Button from './UI/Button';
 
 const SingleView = props => {
   const {selectedItem,setSelectedItem} = props;
   const handleClick = () => {
     setSelectedItem(null);
   }
-
+  console.log(selectedItem);
   return <>
-  <dialog open={selectedItem ? true : false}>
+  <dialog
+     className="w-2/4"
+  open={selectedItem ? true : false}>
+
     <p>
-      <button onClick={handleClick}>Close</button>
+      <Button text = "Close" handleClick = {handleClick} />
     </p>
     {selectedItem && (
       <>
@@ -17,7 +21,9 @@ const SingleView = props => {
       <video controls>
         <source src={selectedItem.filename} type={selectedItem.media_type} />
       </video> :
-      <img src={selectedItem.filename} alt={selectedItem.title} />}
+      <img
+      className='h-3/4'
+      src={selectedItem.filename} alt={selectedItem.title} />}
       <h2>{selectedItem.title}</h2>
       <p>{selectedItem.description}</p>
       <p>Created: {new Date(selectedItem.created_at).toLocaleString}</p>

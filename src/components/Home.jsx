@@ -51,7 +51,7 @@ const Home = () => {
     <>
       <h2>My Media</h2>
       <table>
-        <thread>
+        <thead>
           <tr>
           <th>Thumbnail</th>
             <th>Title</th>
@@ -61,7 +61,7 @@ const Home = () => {
             <th>Type</th>
             <th>Actions</th>
           </tr>
-        </thread>
+        </thead>
         <tbody>
 
         {mediaArray.map((item) => (
