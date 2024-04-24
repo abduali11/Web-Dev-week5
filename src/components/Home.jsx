@@ -63,24 +63,13 @@ const Home = () => {
           </tr>
         </thead>
         <tbody>
-
         {mediaArray.map((item) => (
-      <MediaRow key={item.media_id} item={item} setSelectedItem = {setSelectedItem} />
-       ))}
-
+            <MediaRow key={item.media_id} item={item} setSelectedItem={setSelectedItem} />
+          ))}
         </tbody>
-
       </table>
-
-      <SingleView selectedItem={SelectedItem}
-      setSelectedItem={setSelectedItem} />
-
     </>
   );
 };
-
-
-
-
 
 export default Home;
