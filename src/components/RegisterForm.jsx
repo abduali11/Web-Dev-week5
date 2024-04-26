@@ -1,6 +1,6 @@
 import {useUser} from '../hooks/apiHooks';
 import useForm from '../hooks/formHooks';
-import Button from './UI/Button'; // Make sure to import Button component
+import Button from './UI/Button';
 
 const RegisterForm = () => {
   const {register} = useUser();
@@ -20,6 +20,7 @@ const RegisterForm = () => {
       alert(error.message);
     }
   }
+
 
   const {handleSubmit, handleInputChange, inputs} = useForm(
     doRegister,

@@ -39,6 +39,22 @@ const useUser = () => {
     return userResult;
   };
 
+  const postUser = async (inputs) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(inputs),
+    };
+
+    const userResult = await fetchData(
+      import.meta.env.VITE_AUTH_API + '/users',
+      options,
+    );
+    return userResult;
+  };
+
   const getUserByToken = async (token) => {
     const options = {
       headers: {
@@ -64,7 +80,7 @@ const useUser = () => {
     return await fetchData(import.meta.env.VITE_AUTH_API + '/users', options);
   };
 
-  return {getUserById, getUserByToken, register};
+  return {getUserById, postUser, getUserByToken, register};
 };
 
 const useAuthentication = () => {
