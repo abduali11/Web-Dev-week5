@@ -4,6 +4,7 @@ import {fetchData} from '../lib/fetchData';
 const useMedia = () => {
   const [mediaArray, setMediaArray] = useState([]);
   const {getUserById} = useUser();
+
   const getMedia = async () => {
     try {
       const mediaResult = await fetchData(
@@ -19,7 +20,7 @@ const useMedia = () => {
 
       setMediaArray(mediaWithUser);
     } catch (error) {
-      // console.log(error);
+      console.log(error);
     }
   };
 
