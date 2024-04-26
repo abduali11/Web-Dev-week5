@@ -7,6 +7,8 @@ export const Layout = () => {
         <Link to = "/">Etusivu</Link>
     <Link to = "/Profile">Profiili😊😊</Link>
     <Link to = "/Upload">Upload 😁😁</Link>
+    <Link to="/login">Login</Link>
+    <Link to="/logout">Logout</Link>
       </nav>
       <main>
         <Outlet />
@@ -14,3 +16,5 @@ export const Layout = () => {
     </div>
   );
 }
+
+export default Layout;

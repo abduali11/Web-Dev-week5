@@ -1,5 +1,5 @@
 import { useLocation, useNavigate, useParams, } from "react-router-dom"
-import SingleView from "./SingleView"
+import SingleView from "../components/SingleView"
 import  mediaArray from "../data/Media.js"
 
 
