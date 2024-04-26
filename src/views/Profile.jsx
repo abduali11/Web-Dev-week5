@@ -20,7 +20,7 @@ export const Profile = () => {
     getUser();
   }, []);
 
-  console.log('user', user);
+
 
   return (
     <div>
